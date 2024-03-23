@@ -57,4 +57,14 @@ class CustomerTest {
         var customer = new Customer("1", "Hanif", "HANIF@LOCALHOST");
         assertEquals("Hello Haikal, my name is Hanif", customer.sayHello("Haikal"));
     }
+
+    @Test
+    void recordEquals() {
+        var customer1 = new Customer("1", "Hanif", "HANIF@LOCALHOST");
+        var customer2 = new Customer("1", "Hanif", "HANIF@LOCALHOST");
+
+        assertTrue(customer1.equals(customer2));
+        assertEquals(customer1.hashCode(),customer2.hashCode());
+        assertEquals(customer1.toString(),customer2.toString());
+    }
 }
