@@ -1,6 +1,6 @@
 package programmerzamannow.records.data;
 
-public record Customer(String id, String name, String email, String phone) {
+public record Customer(String id, String name, String email, String phone) implements SayHello{
     //canonical
     public Customer(String id, String name, String email, String phone){
         System.out.println("Create customer");
@@ -20,6 +20,7 @@ public record Customer(String id, String name, String email, String phone) {
         this(id,name,null);
     }
 
+    @Override
     public String sayHello(String name){
         return "Hello "+name+", my name is "+this.name;
     }
