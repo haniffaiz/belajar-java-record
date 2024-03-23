@@ -25,4 +25,30 @@ class CustomerTest {
 
         System.out.println(customer);
     }
+
+    @Test
+    void constructor() {
+        var customer = new Customer("1", "Hanif", "hanif@localhost");
+        assertNotNull(customer);
+        assertEquals("1", customer.id());
+        assertEquals("Hanif", customer.name());
+        assertEquals("hanif@localhost", customer.email());
+
+        assertNull(customer.phone());
+
+        System.out.println(customer);
+    }
+
+    @Test
+    void canonicalConstructor() {
+        var customer = new Customer("1", "Hanif", "HANIF@LOCALHOST");
+        assertNotNull(customer);
+        assertEquals("1", customer.id());
+        assertEquals("Hanif", customer.name());
+        assertEquals("hanif@localhost", customer.email());
+
+        assertNull(customer.phone());
+
+        System.out.println(customer);
+    }
 }
