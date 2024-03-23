@@ -1,6 +1,8 @@
 package programmerzamannow.records.data;
 
-public record Point(int x, int y) {
+import programmerzamannow.records.annotations.Valid;
+
+public record Point(@Valid int x,@Valid int y) {
     public Point{
         System.out.println("Create Point");
     }
