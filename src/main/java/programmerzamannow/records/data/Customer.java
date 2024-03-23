@@ -20,4 +20,8 @@ public record Customer(String id, String name, String email, String phone) {
         this(id,name,null);
     }
 
+    public String sayHello(String name){
+        return "Hello "+name+", my name is "+this.name;
+    }
+
 }

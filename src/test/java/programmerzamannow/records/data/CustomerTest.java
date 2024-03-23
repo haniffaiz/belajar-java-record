@@ -51,4 +51,10 @@ class CustomerTest {
 
         System.out.println(customer);
     }
+
+    @Test
+    void recordMethod() {
+        var customer = new Customer("1", "Hanif", "HANIF@LOCALHOST");
+        assertEquals("Hello Haikal, my name is Hanif", customer.sayHello("Haikal"));
+    }
 }
